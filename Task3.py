@@ -2,15 +2,6 @@
 # (1 + 1/n)^n и выведите на экран их сумму.
 
 n = int(input('Введите размер списка: '))
-#list = []
-dict = {}
-j = 1
-sum = 0
-for i in range(n):
-    j = round((1 + 1/(i + 1))**(i + 1), 2)
-    sum += j
-    #list.append(j)
-    dict[i + 1] = j
-#print(list)
+dict = {x: eval('round((1 + 1 / x)**x, 2)') for x in range(1, n+1)}
 print(f'Для n = {n} {dict}')
-print('Сумма:', sum)
+print('Сумма:', sum(dict.values()))
